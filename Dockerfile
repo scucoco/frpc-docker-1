@@ -7,4 +7,6 @@ ADD frpc.ini /frpc.ini
 
 RUN chmod 777 /frpc
 
-CMD ["echo hello"]
+RUN apk -U add dnsmasq
+EXPOSE 53 53/udp
+ENTRYPOINT ["dnsmasq", "-k"]
