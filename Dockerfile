@@ -6,8 +6,8 @@ ADD frpc /frpc
 ADD frpc.ini /frpc.ini
 
 RUN chmod 777 /frpc
-RUN apk update && apk add --no-cache tzdata
-RUN cp -r -f /usr/share/zoneinfo/Hongkong /etc/localtime
+RUN /setdate
+
 
 
 ENTRYPOINT ["/frpc", "-c", "/frpc.ini"]
