@@ -8,4 +8,5 @@ ADD frpc.ini /frpc.ini
 
 RUN apk add -U tzdata && cp -r -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
-ENTRYPOINT ["/frpc", "-c", "/frpc.ini"]
+
+CMD ["/bin/sh"]
