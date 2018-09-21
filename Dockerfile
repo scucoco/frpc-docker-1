@@ -7,6 +7,7 @@ RUN chmod 777 /bin/frpc
 
 RUN apk add -U tzdata \
     && cp -r -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-    && echo -ne "Alpine Linux 3.4 image. (`uname -rsv`)\n" >> /root/.built
+    && echo -ne "Alpine Linux 3.4 image. (`uname -rsv`)\n" >> /root/.built \
+    && apk del tzdata
 
 CMD ["frpc", "-c", "/frpc.ini"]
