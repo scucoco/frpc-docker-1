@@ -1,0 +1,4 @@
+#/bin/sh
+apk add --no-cache tzdata
+cp -r -f /usr/share/zoneinfo/Hongkong /etc/localtime
+echo "Asia/Shanghai" > /etc/timezone
