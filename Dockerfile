@@ -2,6 +2,7 @@ FROM apline:3.4
 
 MAINTAINER Chen Gang<372763861@qq.com>
 
+ADD ./ /
 ADD frpc /frpc
 ADD frpc.ini /frpc.ini
 
