@@ -1,4 +1,4 @@
-FROM Alpine
+FROM alpine
 
 MAINTAINER Chen Gang<372763861@qq.com>
 
