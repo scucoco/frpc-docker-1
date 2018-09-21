@@ -8,8 +8,4 @@ ADD setdate /setdate
 
 RUN chmod 777 /frpc
 
-
-
-
-ENTRYPOINT ["/bin/sh", "/setdate"]
 ENTRYPOINT ["/frpc", "-c", "/frpc.ini"]
