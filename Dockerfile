@@ -1,12 +1,11 @@
-FROM apline:3.4
+FROM alpine:3.4
 
-MAINTAINER Chen Gang<372763861@qq.com>
-
+# Install root filesystem
 ADD ./ /
-ADD frpc /frpc
-ADD frpc.ini /frpc.ini
 
-RUN apk add -U tzdata && cp -r -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+RUN apk update && apk add curl bash tree tzdata \
+    && cp -r -f /usr/share/zoneinfo/Hongkong /etc/localtime \
+    && echo -ne "Alpine Linux 3.4 image. (`uname -rsv`)\n" >> /root/.built
+# Define bash as default command
+CMD ["/bin/bash"]
 
-
-CMD ["/bin/sh"]
