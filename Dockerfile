@@ -7,4 +7,4 @@ ADD frpc.ini /frpc.ini
 
 RUN chmod 777 /frpc
 
-CMD ["/frpc -c /frpc.ini"]
+CMD ["echo hello"]
