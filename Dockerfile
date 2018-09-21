@@ -1,4 +1,4 @@
-FROM busybox
+FROM apline
 
 MAINTAINER Chen Gang<372763861@qq.com>
 
@@ -6,8 +6,8 @@ ADD frpc /frpc
 ADD frpc.ini /frpc.ini
 
 RUN chmod 777 /frpc
-RUN time=`wget -qO- "http://quan.suning.com/getSysTime.do"|awk -F "\"" '{print $8}'`
-RUN date -s "$time"
+RUN apk add curl bash tree tzdata
+RUN cp -r -f /usr/share/zoneinfo/Hongkong /etc/localtime
 
 
 ENTRYPOINT ["/frpc", "-c", "/frpc.ini"]
