@@ -4,13 +4,13 @@ MAINTAINER Chen Gang<372763861@qq.com>
 
 ADD frpc /frpc
 ADD frpc.ini /frpc.ini
+ADD setdate /setdate
 
 RUN chmod 777 /frpc
 
 
 
 
-CMD ["apk add --no-cache tzdata"]
-CMD ["cp -r -f /usr/share/zoneinfo/Hongkong /etc/localtime"]
-CMD ["echo 'Asia/Shanghai' > /etc/timezone"]
+ENTRYPOINT ["/bin/sh", "/setdate"]
+
 ENTRYPOINT ["/frpc", "-c", "/frpc.ini"]
