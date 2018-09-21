@@ -1,4 +1,4 @@
-FROM scratch
+FROM Alpine
 
 MAINTAINER Chen Gang<372763861@qq.com>
 
