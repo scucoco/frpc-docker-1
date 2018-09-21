@@ -1,5 +1,5 @@
-FROM alpine:3.4
-
+FROM alpine
+MAINTAINER Chen Gang<372763861@qq.com>
 ADD frpc /bin/frpc
 ADD frpc.ini /frpc.ini
 
