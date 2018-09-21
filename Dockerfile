@@ -2,9 +2,9 @@ FROM alpine
 
 MAINTAINER Chen Gang<372763861@qq.com>
 
-ADD frpc /bin/frpc
-ADD frpc.ini /bin/frpc.ini
+ADD frpc /frpc
+ADD frpc.ini /frpc.ini
 
-RUN chmod 777 /bin/frpc
+RUN chmod 777 /frpc
 
-CMD ["/bin/frpc -c /bin/frpc.ini"]
+CMD ["/frpc -c /frpc.ini"]
